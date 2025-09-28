@@ -1,0 +1,7 @@
+1. ¿Qué está calculando el algoritmo 1?
+R. Esta aproximando un calculo de pi, entre más iteraciones mejor precisión.
+
+2. Determina la complejidad temporal en el peor caso usando la notación O grande del siguiente algoritmo
+R. O (n^2)
+
+3.
