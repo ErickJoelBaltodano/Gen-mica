@@ -1,0 +1,32 @@
+import numpy as np
+
+#Aqui definimos cualquier secuencia que queramos
+secuencias = [
+    "CGGAGACTTTTCCACTGTCGTCGGAGTAGTAAAATAACGGTACGTCTTAGTGTGCACCATCGACTCTTTGTATTGCTCGTTAGGGGTCGCAGCCTCTTGTTAAGCCGTAATGGGTGATCCCCGCTCGTGAAACGGTGCGATCCTGTGATCTGTCAGTATCGAAGGAGTGAAAAAGCGATTGCTAGCCGAGGCGTACCGTG",
+    "CGGAGTCCCCCCCACCGCCGCCGGTGCTGCATATCTACGGCACGCCCCAGTGTGCACCATCGACTCTTTGTATTGCTCGTTAGGGGTCGCAGCCTCTTGTTAAGCCGTAATGGGTGATCCCCGCTCGTGAAACGGTGCGATCCTGTGATCTATTGATGTTAGCAACATAGCCGCATAGTTATTGATTACAATATCTTATA",
+    "CGGAGTCCCCCCCACCGCCGCCGGTGCTGCATATCTACGGCACGCCCCAGCGCGCTCCACCGACCCCCCGCACCGCCCGCCAGGGGCCGCAGCCCCCCGCCATGCCGCTACGGGCGTCCCCCGCCCGCGATTCGGCGCGACCCCGCGACCCGCCTGCACCGTAGGAGCGTAATAGCGTCCGCCTGCCGAGGCGCACCGCG",
+    "CCCTACCCGGCAGACCCCTCCACGCCCCCCCGTAGCACCGGAACCAGATCCGCGGAGCGGGGAGGGAGGCGGGGGGGGGAGGTCGGTCGGGGGTGGGGCGACAAGAGAGGAAACGGCAAGGGGAAGGGAGGAAAAGGAGTGGAACGGAGGATTCATAGTAACTTGCGAAACGCACACGAAATGTGAACCATCACTACCAG"
+]
+
+#Funcion que calcula las medias y varianzas de una secuencia
+def med_var(seq, ventana=50):
+    bases = "ACGT"
+    frecs = {b: [] for b in bases}
+    
+    for i in range(0, len(seq), ventana):
+        sub = seq[i:i+ventana]
+        total = len(sub)
+        for b in bases:
+            frecs[b].append(sub.count(b)/total if total > 0 else 0)
+    
+    # Calcular medias y varianzas
+    stats = {b: (np.mean(vals), np.var(vals)) for b, vals in frecs.items()}
+    return stats
+
+# Evaluamos cada secuencia
+for i, seq in enumerate(secuencias):
+    print(f"Secuencia {i}:")
+    stats = med_var(seq)
+    for b in stats:
+        print(f"  {b}: media={stats[b][0]:.3f}, var={stats[b][1]:.4f}")
+    print()
