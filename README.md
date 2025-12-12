@@ -24,7 +24,7 @@ Repositorio para almacenar las prácticas realizadas durante el curso Genómica 
 
 <br>
 
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWVyOTgzM2NtYTBiczZuYm80cTE4ZTJrOGxqbWRhNWxndHh1em5zZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZBQJXF4aS8u2owCAuC/giphy.gif" width="400" height="300" alt="inicio">
+<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHluYWVmdXZycm54YmkzemdxN214dmdrdmRsYm41czdob2Rtcng1YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ua7vVw9awZKWwLSYpW/giphy.gif" width="400" height="300" alt="inicio">
 
 <br>
 
@@ -47,5 +47,4 @@ Repositorio para almacenar las prácticas realizadas durante el curso Genómica 
         <td>4200003533</td>
     </tr>
 </table>
-
 
